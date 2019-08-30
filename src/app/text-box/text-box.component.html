@@ -1,0 +1,15 @@
+<div class="textbox">
+  <h4>Select names from the list</h4>
+  <ng-select [items]="names"
+  bindLabel="names"
+  bindValue="names"
+  [multiple]="true"
+  [closeOnSelect]="false"
+  [hideSelected]="true"
+  [(ngModel)]="selectedName"
+  (change)="nameSelected()"
+  placeholder="Select names"
+  [ngModelOptions]="{standalone: true}">
+</ng-select>
+
+</div>
