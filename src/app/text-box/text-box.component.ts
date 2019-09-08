@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextBoxComponent implements OnInit {
 
-  selectedName ="";
+  selectedName ="sds";
+  flag = false;
+  public flagopen = false;
   names =['Allison',
   'Arthur',
   'Ana',
@@ -170,5 +172,21 @@ export class TextBoxComponent implements OnInit {
   public nameSelected() {
     console.log("name list", this.selectedName);
   }
+
+  public customSearchFn(term: string, item: any) {
+    term = term.toLocaleLowerCase();
+    console.log("last v",term.charAt(term.length-1), term);
+    if(term.includes('@')) {
+      var pos = term.indexOf('@');
+      var las = term.charAt(term.length-1)
+      term =  term.toLocaleLowerCase().substring(pos+1,term.length);
+      console.log("sea term", term);
+    return item.toLocaleLowerCase().indexOf(term) > -1 ;
+    }
+    
+    
+  }
+
+  
 
 }

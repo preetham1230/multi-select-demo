@@ -6,6 +6,7 @@
   [multiple]="true"
   [closeOnSelect]="false"
   [hideSelected]="true"
+  [searchFn]="customSearchFn"
   [(ngModel)]="selectedName"
   (change)="nameSelected()"
   placeholder="Select names"
